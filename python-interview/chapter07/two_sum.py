@@ -18,12 +18,10 @@ class Solution2:
 class Solution3:
     def twoSum(self, nums: [int], target: int) -> [int]:
         nums_map = {}
-        for i, n in enumerate(nums):
-            nums_map[n] = i
-
-        for i, n in enumerate(nums):
-            if target - n in nums_map and i != nums_map[target - n]:
-                return nums.index(n), nums_map[target - n]
+        for i, num in enumerate(nums):
+            if target - num in nums_map:
+                return [nums_map[target - num], i]
+            nums_map[num] = i
 
 
 class Solution4:
@@ -38,13 +36,15 @@ class Solution4:
             elif nums[left] + nums[right] > target:
                 right -= 1
             else:
-                return left, right
+                return [left, right]
 
 
 nums1 = [2, 7, 11, 15]
 target1 = 9
+
 nums2 = [3, 2, 4]
 target2 = 6
+
 nums3 = [3, 3]
 target3 = 6
 
@@ -62,3 +62,8 @@ sol3 = Solution3()
 print(sol3.twoSum(nums1, target1))
 print(sol3.twoSum(nums2, target2))
 print(sol3.twoSum(nums3, target3))
+print("-------------------------")
+sol4 = Solution4()
+print(sol4.twoSum(nums1, target1))
+print(sol4.twoSum(nums2, target2))
+print(sol4.twoSum(nums3, target3))
