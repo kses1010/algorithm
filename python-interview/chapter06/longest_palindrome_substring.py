@@ -12,10 +12,7 @@ class Solution:
         result = ''
 
         for i in range(len(s) - 1):
-            result = max(result,
-                         expand(i, i + 1),
-                         expand(i, i + 2),
-                         key=len)
+            result = max(result, expand(i, i + 1), expand(i, i + 2), key=len)
         return result
 
 

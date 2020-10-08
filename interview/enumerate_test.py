@@ -12,10 +12,14 @@ for v in b:
     j += 1
 print('---------')
 
-
 for i, v in enumerate(b):
     print(i, v)
 
+for i in enumerate(b):
+    print(i)
+
+
+print("------------")
 users = []
 
 if not users:

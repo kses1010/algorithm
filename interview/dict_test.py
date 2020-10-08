@@ -7,6 +7,10 @@ print(a)
 a['C'] += 1
 print(a)
 
+for i, k in enumerate(a):
+    print(i, k, a[k])
+    print("---")
+
 b = [1, 2, 3, 4, 5, 5, 5, 6, 6]
 c = collections.Counter(b)
 print(c)
