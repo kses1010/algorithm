@@ -3,13 +3,12 @@ from itertools import combinations
 
 def solution(numbers):
     answer = []
-    number_list = list(combinations(numbers, 2))
+    list_numbers = combinations(numbers, 2)
 
-    for i in number_list:
-        answer.append(i[0] + i[1])
+    for i in list_numbers:
+        answer.append(sum(i))
     answer = list(set(answer))
     answer.sort()
-
     return answer
 
 
