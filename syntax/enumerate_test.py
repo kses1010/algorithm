@@ -10,7 +10,7 @@ j = 0
 for v in b:
     print(j, v)
     j += 1
-print('---------')
+print('---------enumerate')
 
 for i, v in enumerate(b):
     print(i, v)

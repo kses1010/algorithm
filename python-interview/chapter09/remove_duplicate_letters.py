@@ -3,6 +3,7 @@ import collections
 
 class Solution:
     def removeDuplicateLetter(self, s: str) -> str:
+        # 실패
         word_set = set()
         word_stack = []
         for char in s:
@@ -38,6 +39,21 @@ class Solution:
             word_stack.append(char)
 
         return ''.join(word_stack)
+
+    def removeDuplicateLetters(self, s: str) -> str:
+        counter, stack = collections.Counter(s), []
+
+        for char in s:
+            counter[char] -= 1
+            if char in stack:
+                continue
+
+            while stack and char < stack[-1] and counter[stack[-1]] > 0:
+                stack.pop()
+
+            stack.append(char)
+
+        return ''.join(stack)
 
 
 sol = Solution()
