@@ -40,3 +40,4 @@ t = [73, 74, 75, 71, 69, 72, 76, 73]
 print(sol.daily_temperatures(t))
 
 answers = [0] * len(t)
+print(answers)
