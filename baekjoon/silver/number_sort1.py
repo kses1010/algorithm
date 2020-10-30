@@ -1,3 +1,5 @@
+# 2750
+
 input_number = int(input())
 
 number_list = []
