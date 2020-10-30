@@ -2,13 +2,15 @@ import collections
 
 
 class Solution:
+    def __init__(self):
+        self.count = 0
+
     def numJewelsInStones(self, J: str, S: str) -> int:
-        count = 0
         for i in range(len(J)):
             for j in range(len(S)):
                 if J[i] == S[j]:
-                    count += 1
-        return count
+                    self.count += 1
+        return self.count
 
     def hash_table_sol(self, J: str, S: str) -> int:
         freqs = {}
