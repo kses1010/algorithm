@@ -1,3 +1,5 @@
+from collections import deque
+
 graph = {
     1: [2, 3, 4],
     2: [5],
@@ -37,9 +39,10 @@ print(iterative_dfs(1))
 # 너비 우선 탐색(BFS)
 def iterative_bfs(start_v):
     discovered = [start_v]
-    queue = [start_v]
+    queue = deque()
+    queue.append(start_v)
     while queue:
-        v = queue.pop(0)
+        v = queue.popleft()
         for w in graph[v]:
             if w not in discovered:
                 discovered.append(w)
