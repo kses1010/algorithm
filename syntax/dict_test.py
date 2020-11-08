@@ -18,3 +18,7 @@ print(c.most_common(2))
 
 d = collections.OrderedDict({'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2})
 print(d)
+
+dic = collections.defaultdict()
+dic['a']['b'] = 'c'
+print(dic)
