@@ -35,9 +35,9 @@ def fibo_for(x):
     d1[1], d1[2] = 1, 1
     for i in range(3, x + 1):
         d1[i] = d1[i - 1] + d1[i - 2]
-    return d[x]
+    return d1[x]
 
 
-print(fibo_for(9))
+print(fibo_for(99))
 
 
