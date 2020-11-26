@@ -22,7 +22,7 @@ for _ in range(m):
     graph[b][a] = 1
 
 print("---------")
-# 거쳐 갈 노드 X와 최종 목적지 노드 K를 입력받기
+# 거쳐 갈 노드 K와 최종 목적지 노드 X를 입력받기
 print(graph)
 x, k = map(int, input().split())
 
