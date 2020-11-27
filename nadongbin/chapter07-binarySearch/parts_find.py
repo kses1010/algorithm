@@ -47,6 +47,7 @@ def count_solution(arr1, arr2):
             answer.append('no')
     return answer
 
+
 # 집합 자료형 set
 def set_solution(arr1, arr2):
     set_list = set(arr1)
