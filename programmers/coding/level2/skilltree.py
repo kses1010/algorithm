@@ -1,10 +1,8 @@
 # 스킬 트리
-import collections
-
 
 def solution(skill, skill_trees):
     answer = 0
-    skill_map = collections.OrderedDict()
+    skill_map = {}
     for i, v in enumerate(skill):
         skill_map[v] = int(i)
     for i in skill_trees:
