@@ -1,18 +1,22 @@
 from collections import deque
 
 
-def topology_sort(graph):
+def topology_sort(arr):
     # 노드의 개수
-    v = len(graph)
+    v = len(arr)
     # 모든 노드에 대한 진입차수는 0으로 초기화
     indegree = [0] * (v + 1)
-    # 진입차수 설정
-    for i in range(len(graph)):
-        for j in range(len(graph[i])):
-            indegree[graph[i][j]] += 1
+    # 연결 그래프 초기화
+    graph = [[] for _ in range(v + 1)]
+
+    # 방향 그래프 모든 간선 정보 받기
+    for i in arr:
+        a, b = i[0], i[1]
+        graph[a].append(b)  # 정점 A에서 B로 이동가능
+        # 진입차수를 1 증가
+        indegree[b] += 1
 
     # 위상 정렬 시작
-
     # 알고리즘 수행 결과를 담을 리스트
     result = []
     # 큐 기능을 위한 deque 라이브러리
@@ -40,12 +44,12 @@ def topology_sort(graph):
 
 
 v1, e = 7, 8
-graph1 = [[],
-          [2, 5],
-          [3, 6],
-          [4],
-          [7],
-          [6],
-          [4],
-          []]
-print(topology_sort(graph1))
+graph2 = [[1, 2],
+          [1, 5],
+          [2, 3],
+          [2, 6],
+          [3, 4],
+          [4, 7],
+          [5, 6],
+          [6, 4]]
+print(topology_sort(graph2))
