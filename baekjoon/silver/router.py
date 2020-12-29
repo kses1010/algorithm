@@ -3,7 +3,7 @@
 def solution(arr, c):
     arr.sort()
     # start, end 값은 집 좌표값이 아닌 gap 값
-    start = arr[1] - arr[0]
+    start = 1
     end = arr[-1] - arr[0]
     result = 0
 
