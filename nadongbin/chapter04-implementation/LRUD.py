@@ -31,7 +31,6 @@ def solution2(n, arr):
                 nx = x + dx[i]
                 if nx < 1 or ny < 1 or nx > n or ny > n:
                     continue
-                    짠돌이
                 y, x = ny, nx
     return y, x
 
