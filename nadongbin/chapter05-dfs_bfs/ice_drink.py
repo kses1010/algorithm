@@ -1,4 +1,6 @@
 # 음료수 얼려 먹기
+from collections import deque
+
 
 def solution(arr):
     # DFS 로 특정한 노드를 방문한 뒤에 연결된 모든 노드들도 방문
@@ -28,9 +30,42 @@ def solution(arr):
     return result
 
 
+def solution2(arr):
+    n, m = len(arr), len(arr[0])
+    check = [[0] * m for _ in range(n)]
+    count = 0
+
+    def bfs(a, b):
+        q = deque()
+        q.append((a, b))
+        dx = [-1, 1, 0, 0]
+        dy = [0, 0, -1, 1]
+        check[a][b] = 1
+        while q:
+            x, y = q.popleft()
+            for d in range(4):
+                nx = x + dx[d]
+                ny = y + dy[d]
+
+                if nx < 0 or nx >= n or ny < 0 or ny >= m:
+                    continue
+                if not check[nx][ny] and not arr[nx][ny]:
+                    q.append((nx, ny))
+                    check[nx][ny] = 1
+
+    for i in range(n):
+        for j in range(m):
+            if not check[i][j] and not arr[i][j]:
+                bfs(i, j)
+                count += 1
+
+    return count
+
+
 arr1 = [[0, 0, 1, 1, 0],
         [0, 0, 0, 1, 1],
         [1, 1, 1, 1, 1],
         [0, 0, 0, 0, 0]]
 
+print(solution2(arr1))
 print(solution(arr1))
