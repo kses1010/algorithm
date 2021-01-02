@@ -6,11 +6,11 @@ def solution(clothes):
         if i[1] in answer:
             answer[i[1]] += 1
         else:
-            answer[i[1]] = 1
+            answer[i[1]] = 2
     count = 1
     for i in answer.values():
-        count *= (i + 1)
-    return answer
+        count *= i
+    return count - 1
 
 
 clothes1 = [['yellow_hat', 'headgear'],
