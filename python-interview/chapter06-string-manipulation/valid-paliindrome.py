@@ -1,3 +1,6 @@
+# 125. Valid Palindrome
+
+import re
 from collections import deque
 
 
@@ -14,17 +17,19 @@ class Solution:
 
         return True
 
+    def is_palindrome_slice(self, s):
+        s = s.lower()
+        # regex filter
+        s = re.sub('[^a-z0-9]', '', s)
+
+        return s == s[::-1]  # 슬라이싱
+
 
 str1 = "A man, a plan, a canal: Panama"
 str2 = "race a car"
-sol1 = Solution()
 
-if sol1.isPalindrome(str1):
-    print(True)
-else:
-    print(False)
-
-if sol1.isPalindrome(str2):
-    print(True)
-else:
-    print(False)
+sol = Solution()
+print(sol.isPalindrome(str1))
+print(sol.isPalindrome(str2))
+print(sol.is_palindrome_slice(str1))
+print(sol.is_palindrome_slice(str2))
