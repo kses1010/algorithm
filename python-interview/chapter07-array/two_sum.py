@@ -1,3 +1,5 @@
+# 1. Two Sum
+
 class Solution:
     def twoSum(self, nums: [int], target: int) -> [int]:
         for i in range(len(nums)):
@@ -8,11 +10,11 @@ class Solution:
 
 class Solution2:
     def twoSum(self, nums: [int], target: int) -> [int]:
-        for i, n in enumerate(nums):
-            complement = target - n
+        for i, v in enumerate(nums):
+            rest_num = target - v
 
-            if complement in nums[i + 1:]:
-                return nums.index(n), nums[i + 1:].index(complement) + (i + 1)
+            if rest_num in nums[i + 1:]:
+                return nums.index(v), nums[i + 1:].index(rest_num) + (i + 1)
 
 
 class Solution3:
@@ -24,6 +26,7 @@ class Solution3:
             nums_map[num] = i
 
 
+# 사실상 이진 탐색
 class Solution4:
     def twoSum(self, nums: [int], target: int) -> [int]:
         left = 0
