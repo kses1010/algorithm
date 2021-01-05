@@ -1,4 +1,9 @@
+# 121. Best Time to Buy and Sell Stock
+
 import sys
+
+# 완전 탐색
+from math import inf
 
 
 class Solution:
@@ -11,10 +16,11 @@ class Solution:
         return profit
 
 
+# 저점 고점 문제 - 카데인 알고리즘 O(n)
 class Solution2:
     def maxProfit(self, prices: [int]) -> int:
         profit = 0
-        min_price = sys.maxsize
+        min_price = inf
 
         for i in prices:
             min_price = min(min_price, i)
