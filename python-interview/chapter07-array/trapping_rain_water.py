@@ -1,3 +1,6 @@
+# 42. Trapping Rain Water
+
+# 투포인터로 최대로 이동한 풀이법
 class Solution:
     def trap(self, height: [int]) -> int:
         if not height:
@@ -20,7 +23,7 @@ class Solution:
                 right -= 1
         return volume
 
-
+# 스택으로 계산
 class Solution2:
     def trap(self, height: [int]) -> int:
         stack = []
@@ -38,6 +41,7 @@ class Solution2:
                 # 이전과의 차이만큼 물 높이 처리
                 distance = i - stack[-1] - 1
                 waters = min(height[i], height[stack[-1]]) - height[top]
+
                 volume += distance * waters
 
             stack.append(i)
