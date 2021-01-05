@@ -1,3 +1,6 @@
+# 15. 3Sum
+
+# 완전 탐색으로 계산
 class Solution:
     def threeSum(self, nums: [int]) -> [[int]]:
         result = []
@@ -20,6 +23,7 @@ class Solution:
         return result
 
 
+# 투포인터로 합 계산
 class Solution2:
     def threeSum(self, nums: [int]) -> [[int]]:
         result = []
