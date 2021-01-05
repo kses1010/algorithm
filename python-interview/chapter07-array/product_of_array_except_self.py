@@ -1,3 +1,5 @@
+# 238. Product of Array Except Self
+
 from functools import reduce
 
 
@@ -17,6 +19,7 @@ class Solution:
         return result
 
 
+# 완전 탐색
 class Solution2:
     def product_except_self(self, nums: [int]) -> [int]:
         result = []
