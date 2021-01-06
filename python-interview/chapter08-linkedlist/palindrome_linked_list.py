@@ -1,3 +1,5 @@
+# 234. Palindrome Linked List
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -30,6 +32,7 @@ class Solution2:
         slow = fast = head
         while fast and fast.next:
             fast = fast.next.next
+            # 역순으로 연결 리스트 rev를 생성하는 로직 slow 앞에 덧붙인다.
             rev, rev.next, slow = slow, rev, slow.next
         if fast:
             slow = slow.next
