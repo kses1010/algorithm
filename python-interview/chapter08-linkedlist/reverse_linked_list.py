@@ -1,3 +1,5 @@
+# 206. Reverse Linked List
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -5,14 +7,17 @@ class ListNode:
 
 
 class Solution:
+    # 재귀 풀이법
     def reverseList(self, head: ListNode) -> ListNode:
         def reverse(node: ListNode, prev: ListNode = None):
             if not node:
                 return prev
             next, node.next = node.next, prev
+            return reverse(next, node)
 
-        return reverse(head)
+        return reverse(head, None)
 
+    # 반복문 풀이법
     def reverseList2(self, head: ListNode) -> ListNode:
         node, prev = head, None
 
