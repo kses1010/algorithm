@@ -1,3 +1,5 @@
+# 21. Merge Two Sorted Lists
+
 class ListNode:
     def __init__(self, data=0, next=None):
         self.data = data
@@ -5,6 +7,7 @@ class ListNode:
 
 
 class Solution:
+    # 재귀 구조 풀이
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         if (not l1) or (l2 and l1.data > l2.data):
             l1, l2 = l2, l1
@@ -12,6 +15,7 @@ class Solution:
             l1.next = self.mergeTwoLists(l1.next, l2)
         return l1
 
+    # 반복문 풀이
     def merge_iteratively(self, l1, l2):
         dummy = cur = ListNode(0)
         while l1 and l2:
@@ -26,8 +30,7 @@ class Solution:
         return dummy.next
 
 
-l1 = [1, 2, 4]
-l2 = [1, 3, 4]
+list1 = [1, 2, 4]
+list2 = [1, 3, 4]
 
 sol = Solution()
-print(sol.merge_iteratively(l1, l2))
