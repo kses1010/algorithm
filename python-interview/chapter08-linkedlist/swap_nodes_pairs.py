@@ -1,3 +1,6 @@
+# 24. Swap Nodes in Pairs
+
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -5,6 +8,7 @@ class ListNode:
 
 
 class Solution:
+    # 단순 값 교환
     def swapPairs(self, head: ListNode) -> ListNode:
         cur = head
 
@@ -14,6 +18,7 @@ class Solution:
 
         return head
 
+    # 반복문 스왑
     def swap_pairs(self, head: ListNode) -> ListNode:
         root = prev = ListNode(None)
         prev.next = head
@@ -29,3 +34,13 @@ class Solution:
             prev = prev.next.next
 
         return root.next
+
+    # 재귀 스왑
+    def swap_recur(self, head: ListNode):
+        if head and head.next:
+            p = head.next
+            # 스왑된 값 리턴 받음
+            head.next = self.swap_recur(p.next)
+            p.next = head
+            return p
+        return head
