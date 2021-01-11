@@ -1,3 +1,5 @@
+# 20. Valid Parentheses
+
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
@@ -12,8 +14,8 @@ class Solution:
                 stack.append(char)
             elif not stack or bucket_table[char] != stack.pop():
                 return False
-
-        return len(stack) == 0
+        # 전부 정상적으로 유효한 괄호면 스택은 비워진다.
+        return not stack
 
 
 sol = Solution()
@@ -28,4 +30,3 @@ print(sol.isValid(s2))
 print(sol.isValid(s3))
 print(sol.isValid(s4))
 print(sol.isValid(s5))
-
