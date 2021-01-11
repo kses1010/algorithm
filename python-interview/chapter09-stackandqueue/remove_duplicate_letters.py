@@ -1,3 +1,5 @@
+# 316. Remove Duplicate Letters
+
 import collections
 
 
@@ -13,6 +15,7 @@ class Solution:
             word_stack.append(char)
         return ''.join(word_stack)
 
+    # 재귀 풀이 - 분할 정복, 백트래킹을 활용한 풀이
     def remove_duplicate_recursively(self, s: str) -> str:
         # 집합으로 정렬
         for char in sorted(set(s)):
@@ -60,9 +63,8 @@ sol = Solution()
 s1 = "bcabc"
 s2 = "cbacdcbc"
 print(sol.removeDuplicateLetter(s1))
-print(sol.removeDuplicateLetter(s2))
+print(sol.removeDuplicateLetters(s2))
 print(sol.remove_duplicate_recursively(s1))
 print(sol.remove_duplicate_recursively(s2))
 print(sol.remove_duplicate_stack(s1))
 print(sol.remove_duplicate_stack(s2))
-
