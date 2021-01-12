@@ -1,3 +1,5 @@
+# 771. Jewels and Stones
+
 import collections
 
 
@@ -41,7 +43,6 @@ class Solution:
     def counter_hash_sol(self, J: str, S: str) -> int:
         freqs = collections.Counter(S)
         count = 0
-        print(freqs)
         for char in J:
             count += freqs[char]
         return count
