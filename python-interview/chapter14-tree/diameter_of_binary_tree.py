@@ -27,3 +27,20 @@ class Solution:
 
         dfs(root)
         return longest
+
+    def diameter_of_binary_tree(self, root):
+        long_dist = 0
+
+        def dfs(node):
+            if not node:
+                return 0
+
+            left = dfs(node.left)
+            right = dfs(node.right)
+
+            nonlocal long_dist
+            long_dist = max(long_dist, left + right)
+            # 상태값
+            return max(left, right) + 1
+        dfs(root)
+        return long_dist
