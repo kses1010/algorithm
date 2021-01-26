@@ -1,4 +1,5 @@
 # 783. Minimum Distance Between BST Nodes
+import sys
 from math import inf
 
 
@@ -10,20 +11,23 @@ class TreeNode:
 
 
 class Solution:
-    prev = -inf
-    result = inf
-
     def minDiffInBST(self, root: TreeNode) -> int:
-        if root.left:
-            self.minDiffInBST(root.left)
 
-        self.result = min(self.result, root.val - self.prev)
-        self.prev = root.val
+        prev = -sys.maxsize
+        result = sys.maxsize
 
-        if root.right:
-            self.minDiffInBST(root.right)
+        def dfs(node):
+            if node.left:
+                dfs(node)
+            nonlocal prev, result
+            result = min(result, node.val - prev)
+            prev = node.val
 
-        return self.result
+            if node.right:
+                dfs(node.right)
+
+        dfs(root)
+        return result
 
     def min_diff_in_bst(self, root):
         pre_val = -inf
