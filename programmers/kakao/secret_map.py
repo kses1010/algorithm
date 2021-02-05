@@ -22,7 +22,19 @@ def solution2(n, arr1, arr2):
     return answer
 
 
+def solution3(n, arr1, arr2):
+    maps = []
+    for i in range(n):
+        maps.append(bin(arr1[i] | arr2[i])[2:]
+                    .zfill(n)
+                    .replace('1', '#')
+                    .replace('0', ' '))
+    return maps
+
+
 n1, map1, map2 = 5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]
 n2, map3, map4 = 6, [46, 33, 33, 22, 31, 50], [27, 56, 19, 14, 14, 10]
 print(solution(n1, map1, map2))
+print(solution3(n1, map1, map2))
 print(solution(n2, map3, map4))
+print(solution3(n2, map3, map4))
